@@ -58,6 +58,16 @@ git commit -au "foo"
 ### Important Concepts
 - CLR: Common Language Runtime
 - FCL: Framework Class Library
+- Access modifier: Private, Public, Internal, Protected.
+- Internal: only accessible inside the same project. This is the default setting for classes.
+
+### Naming Conventions
+- Project name: Grades
+- Unit test project name: Grades.Tests
+- For private filed: _grades
+- For public field: Grades
+- For common variables: hoursOfSleep
+- For method name: AddGrade
 
 ### Questions
 - How to quickly move cursor around in VS2015 editor?
@@ -74,3 +84,80 @@ switch(foo)
 		break;
 }
 ```
+Enumeration
+
+```
+public enum PayrollType
+{
+	Contractor = 1,
+	Salaried,
+	Executive,
+	Hourly
+}
+
+if(employee.Role == PayrollType.Hourly)
+{
+	// ...
+}
+```
+
+How to compare two strings
+
+```
+string name1 = "Scott";
+string name2 = "scott";
+
+bool areEqual = name1.Equals(name2, StringComparison.CurrentCulture);
+```
+
+Immutable
+
+```
+private static void Immutable()
+        {
+            string name = " Scott ";
+            name = name.Trim();
+            Console.WriteLine(name);
+
+            DateTime date = new DateTime(2014, 12, 3);
+            date = date.AddHours(1);
+            Console.WriteLine(date);
+        }
+```
+
+Array Syntax
+
+```
+private static void Arrays()
+        {
+            float[] grades;  // List<float> _grades
+            grades = new float[3];
+
+            AddGrades(grades);
+
+            foreach(float grade in grades)
+            {
+                Console.WriteLine(grade);
+            }
+        }
+
+        private static void AddGrades(float[] grades)
+        {
+            grades[0] = 91f;
+            grades[1] = 98f;
+            grades[2] = 86f;
+        }
+```
+
+Compare Arry with List
+
+```
+float[] grades // This is an array
+grades.Length
+
+List<float> grades // This is a list
+grades.Count
+```
+
+### Important Tips
+- Write class as default. Write struct with caution. 99% of the time, you will use class instead of struct.
