@@ -35,6 +35,8 @@ git checkout -- octocat.txt
 // undo changes to octocat.txt to the state of last commit
 git branch clean_up
 git checkout clean_up //switch to clean_up branch
+git checkout -b [branch_name] 
+/* create a branch called [branch_name] and immediately checkout that branch to working directory. */
 git rm '*.txt'
 git checkout master
 git merge clean_up // making sure you are on master branch
@@ -64,7 +66,7 @@ git commit -au "foo"
 ### Naming Conventions
 - Project name: Grades
 - Unit test project name: Grades.Tests
-- For private filed: _grades
+- For private field: _grades
 - For public field: Grades
 - For common variables: hoursOfSleep
 - For method name: AddGrade
@@ -73,14 +75,20 @@ git commit -au "foo"
 - How to quickly move cursor around in VS2015 editor?
 
 ### Syntax
+
+Switch
+
 ```
 switch(foo)
 {
 	case "A":
+		...
 		break;
 	case "B":
+		...
 		break;
 	default:
+		...
 		break;
 }
 ```
@@ -97,7 +105,7 @@ public enum PayrollType
 
 if(employee.Role == PayrollType.Hourly)
 {
-	// ...
+	...
 }
 ```
 
